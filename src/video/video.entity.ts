@@ -10,7 +10,7 @@ export class VideoEntity extends Base {
 	name: string;
 
 	@Column({ default: false, name: 'is_public' })
-	isPablic: boolean;
+	isPublic: boolean;
 
 	@Column({ default: 0 })
 	views?: number;
@@ -25,7 +25,7 @@ export class VideoEntity extends Base {
 	videoPath: string;
 
 	@Column({ default: 0, name: 'tabnail_path' })
-	tabnailPath: string;
+	thumbnailPath: string;
 
 	@ManyToOne(() => UserEntity, (user) => user.videos)
 	@JoinColumn({ name: 'user_id' })
