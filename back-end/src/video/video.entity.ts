@@ -21,6 +21,9 @@ export class VideoEntity extends Base {
 	@Column({ default: 0 })
 	duration: number;
 
+	@Column({ default: 0, type: 'text' })
+	description: string;
+
 	@Column({ default: 0, name: 'video_path' })
 	videoPath: string;
 
