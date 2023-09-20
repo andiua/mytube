@@ -12,14 +12,15 @@ export const useOutside = (initialIsVisible: boolean): TypeOut => {
 
 	const handleClickOutside = (e: any) => {
 		if (ref.current && !ref.current.contains(e.target)) {
-			setIsShow(false)
+			setIsShow(false);
 		}
-	}
+	};
 
 	useEffect(() => {
-		document.addEventListener('click', handleClickOutside, true)
-		return document.removeEventListener('click', handleClickOutside, true);
-	})
+		document.addEventListener('click', handleClickOutside, true);
+		return () =>
+			document.removeEventListener('click', handleClickOutside, true);
+	});
 
-	return {ref, setIsShow, isShow}
+	return { ref, setIsShow, isShow };
 };
