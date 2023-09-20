@@ -10,13 +10,16 @@ import styleIcon from '../icons-right/IconsRight.module.scss';
 import Field from '@/components/ui/field/Field';
 import { validEmail } from './auth.valid';
 import Button from '@/components/ui/button/Button';
+import { useActions } from '@/hooks/useActions';
 
 const AuthForm: FC = () => {
 	const { isShow, ref, setIsShow } = useOutside(false);
 
 	const [type, setType] = useState<'login' | 'register'>('login');
 
-	// const {isLoading } = useAuth();
+	const { login, register: registerAction } = useActions();
+
+	const { isLoading } = useAuth();
 
 	const {
 		register,
@@ -28,7 +31,9 @@ const AuthForm: FC = () => {
 
 	const onSubmit: SubmitHandler<IAuthFields> = (data) => {
 		if (type === 'login') {
+			login(data);
 		} else if (type === 'register') {
+			registerAction(data);
 		}
 	};
 
@@ -64,11 +69,14 @@ const AuthForm: FC = () => {
 						type='password'
 					/>
 					<div className='mt-5 mb-1 text-center'>
-						<Button onClick={() => setType('login')}>Ввійти</Button>
+						<Button onClick={() => setType('login')} disabled={isLoading}>
+							Ввійти
+						</Button>
 					</div>
 					<button
 						className={styles.register}
 						onClick={() => setType('register')}
+						disabled={isLoading}
 					>
 						Реєстрація
 					</button>
