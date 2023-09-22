@@ -21,6 +21,13 @@ export const api = createApi({
 		getProfile: builder.query<IUser, any>({
 			query: () => `${USER}/profile`,
 			providesTags: () => [{ type: 'Profile' }]
+		}),
+		subscribeToUser: builder.mutation<boolean, number>({
+			query: (id) => ({
+				url: `${USER}/subscribe/${id}`,
+				method: 'PATCH'
+			}),
+			invalidatesTags: () => [{ type: 'Profile' }]
 		})
 	})
 });

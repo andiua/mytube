@@ -9,5 +9,5 @@ export interface IComment extends IBase {
 }
 
 export interface ICommentDto extends Pick<IComment, 'message'> {
-	videoid: number
+	videoId: number
 }
