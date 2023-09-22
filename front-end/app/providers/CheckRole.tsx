@@ -10,13 +10,14 @@ const CheckRole: FC<PropsWithChildren<TypeComponentAuthFields>> = ({
 	const { isLoading, user } = useAuth();
 	const { replace, pathname } = useRouter();
 
-	const Children = () => <>{children}</>
-	if (isLoading) return null
-	
-	if (user) return <Children />
-	
-	if (isOnlyUser) { // if client not Auth on Privatepage and this is not main, we redirect to the main page
-		pathname !== '/' && replace('/')
+	const Children = () => <>{children}</>;
+	if (isLoading) return null; //can add own Loader
+
+	if (user) return <Children />;
+
+	if (isOnlyUser) {
+		// if client not Auth on Privatepage and this is not main, we redirect to the main page
+		pathname !== '/' && replace('/');
 	}
 
 	return null;
