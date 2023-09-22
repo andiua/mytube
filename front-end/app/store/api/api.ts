@@ -32,4 +32,4 @@ export const api = createApi({
 	})
 });
 
-export const { useGetProfileQuery } = api;
+// хуки зручніше отримувати через доступ до апі
