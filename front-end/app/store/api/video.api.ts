@@ -5,7 +5,7 @@ import { type } from 'os';
 
 export const videoApi = api.injectEndpoints({
 	endpoints: (builder) => ({
-		getVideoBySearchTerm: builder.query<IVideo[], string>({
+		getVideosBySearchTerm: builder.query<IVideo[], string>({
 			query: (searchTerm) => ({
 				url: `/${VIDEO}`,
 				params: { searchTerm }
