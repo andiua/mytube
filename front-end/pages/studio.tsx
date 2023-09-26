@@ -1,5 +1,4 @@
 import { NextPageAuth } from '@/providers/private-route.interface';
-import React from 'react';
 
 const StudioPage: NextPageAuth = () => {
 	return <div>StudioPage</div>;

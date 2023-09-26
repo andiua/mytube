@@ -2,11 +2,10 @@ import { useActions } from '@/hooks/useActions';
 import { useAuth } from '@/hooks/useAuth';
 import { useOutside } from '@/hooks/useOutside';
 import { api } from '@/store/api/api';
-import React from 'react';
-import styles from './ProfileMenu.module.scss';
 import Image from 'next/image';
-import { GoChevronUp, GoChevronDown } from 'react-icons/go';
 import Link from 'next/link';
+import { GoChevronDown, GoChevronUp } from 'react-icons/go';
+import styles from './ProfileMenu.module.scss';
 
 const ProfileMenu = () => {
 	const { user } = useAuth();

@@ -1,16 +1,16 @@
 import { useAuth } from '@/hooks/useAuth';
 import { useOutside } from '@/hooks/useOutside';
 import { FC, useState } from 'react';
-import { useForm, SubmitHandler } from 'react-hook-form';
-import { IAuthFields } from './auth-form.interface';
+import { SubmitHandler, useForm } from 'react-hook-form';
 import { FaUserCircle } from 'react-icons/fa';
+import { IAuthFields } from './auth-form.interface';
 
-import styles from './AuthForm.module.scss';
-import styleIcon from '../icons-right/IconsRight.module.scss';
-import Field from '@/components/ui/field/Field';
-import { validEmail } from './auth.valid';
 import Button from '@/components/ui/button/Button';
+import Field from '@/components/ui/field/Field';
 import { useActions } from '@/hooks/useActions';
+import styleIcon from '../icons-right/IconsRight.module.scss';
+import styles from './AuthForm.module.scss';
+import { validEmail } from './auth.valid';
 
 const AuthForm: FC = () => {
 	const { isShow, ref, setIsShow } = useOutside(false);
@@ -61,7 +61,7 @@ const AuthForm: FC = () => {
 							required: "Пароль - обов'язкове поле",
 							minLength: {
 								value: 4,
-								message: 'Міню довжина пароля - 4 символи'
+								message: 'Мін. довжина пароля - 4 символи'
 							}
 						})}
 						placeholder='Пароль'

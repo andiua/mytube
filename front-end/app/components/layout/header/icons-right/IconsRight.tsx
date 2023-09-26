@@ -1,9 +1,8 @@
 import { useAuth } from '@/hooks/useAuth';
-import React from 'react';
-import styles from './IconsRight.module.scss';
+import AuthForm from '../auth-form/AuthForm';
 import ProfileMenu from '../profile-menu/ProfileMenu';
 import UploadVideo from '../upload-video/UploadVideo';
-import AuthForm from '../auth-form/AuthForm';
+import styles from './IconsRight.module.scss';
 
 const IconsRight = () => {
 	const { user } = useAuth();
