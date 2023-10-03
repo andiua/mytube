@@ -1,7 +1,7 @@
-import React from 'react';
-import { useSearch } from './useSearch';
-import styles from './Search.module.scss';
+import VideoItem from '@/components/ui/video-item/VideoItem';
 import { AiOutlineSearch } from 'react-icons/ai';
+import styles from './Search.module.scss';
+import { useSearch } from './useSearch';
 
 const Search = () => {
 	const { data, handlerSearch, isSuccess, searchTerm } = useSearch();
@@ -22,8 +22,7 @@ const Search = () => {
 				<div className={styles.result}>
 					{data?.length ? (
 						data.map((video) => (
-							<div>{video.name}</div>
-							// <VideoItem isSmall item={video} key={video.id} />
+							<VideoItem isSmall item={video} key={video.id} />
 						))
 					) : (
 						<div className='text-white'>Відео не знайдено</div>

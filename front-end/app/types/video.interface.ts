@@ -7,7 +7,7 @@ export interface IVideo extends IBase {
 	isPublic?: boolean;
 	views: number;
 	likes: number;
-	duration?: number;
+	duration: number;
 	videoPath: string;
 	description: string;
 	thumbnailPath: string;
