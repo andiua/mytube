@@ -1,9 +1,23 @@
-import React from 'react'
+import LargeVideoItem from '@/components/ui/video-item/LargeVideoItem';
+import { IVideo } from '@/types/video.interface';
+import { FC } from 'react';
+import styles from './Discover.module.scss';
 
-const Discover = () => {
+const Discover: FC<{ topVideo: IVideo; randomVideo: IVideo }> = ({
+	randomVideo,
+	topVideo
+}) => {
 	return (
-		<div>Discover</div>
-	)
-}
+		<div className={styles.discover}>
+			<div className={styles.top_video}>
+				<LargeVideoItem video={topVideo} />
+			</div>
 
-export default Discover
+			<div className={styles.random_video}>
+				<LargeVideoItem video={randomVideo} />
+			</div>
+		</div>
+	);
+};
+
+export default Discover;
