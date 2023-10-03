@@ -1,11 +1,11 @@
 import { IBase } from './base.interface';
-import { IVideo  } from './video.interface';
+import { IVideo } from './video.interface';
 
 export interface IUser extends IBase {
 	email: string;
 	name: string;
 	isVerified?: boolean;
-	subscriberCount?: number;
+	subscriberCount: number;
 	description: string;
 	avatarPath: string;
 	videos?: IVideo[];
@@ -13,5 +13,5 @@ export interface IUser extends IBase {
 }
 
 export interface ISubscription extends IBase {
-	toUser: IUser
+	toUser: IUser;
 }

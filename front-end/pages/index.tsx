@@ -15,7 +15,6 @@ export const getStaticProps: GetStaticProps = async () => {
 		// реалізовували через аксіос
 		const { data: newVideos } = await VideoService.getAll();
 		const { data: topVideos } = await VideoService.getMostPopular();
-
 		return {
 			props: {
 				newVideos: newVideos,

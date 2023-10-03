@@ -10,7 +10,7 @@ import styles from './VideoItem.module.scss';
 import VideoStatistics from './VideoStatistics';
 import { IVideoItem } from './videoItem.interface';
 
-const videoItem: FC<IVideoItem> = ({
+const VideoItem: FC<IVideoItem> = ({
 	item,
 	isSmall,
 	removeHandler,
@@ -76,4 +76,4 @@ const videoItem: FC<IVideoItem> = ({
 	);
 };
 
-export default videoItem;
+export default VideoItem;

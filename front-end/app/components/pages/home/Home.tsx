@@ -8,7 +8,7 @@ const Home: FC<IHome> = ({ newVideos, randomVideo, topVideo }) => {
 	return (
 		<Layout title='MyTube | ваше відео для нашого сайту xD'>
 			<Discover randomVideo={randomVideo} topVideo={topVideo} />
-			<Catalog />
+			<Catalog newVideos={newVideos} />
 		</Layout>
 	);
 };
