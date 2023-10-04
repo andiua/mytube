@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
 import { ServeStaticModule } from '@nestjs/serve-static';
-import { MediaService } from './media.service';
+import { path } from 'app-root-path';
 import { MediaController } from './media.controller';
-import path from 'app-root-path';
+import { MediaService } from './media.service';
 
 @Module({
 	imports: [

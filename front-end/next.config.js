@@ -3,7 +3,7 @@ const nextConfig = {
 	poweredByHeader: false,
 	swcMinify: true,
 	env: {
-		APP_URL: process.env.REACT_APP_URL,
+		APP_URL: process.env.REACT_APP_URL
 	},
 	images: {
 		domains: ['localhost']
@@ -20,7 +20,7 @@ const nextConfig = {
 				destination: 'http://localhost:4200/uploads/:path*'
 			}
 		];
-	 }
-}
+	}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

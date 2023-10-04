@@ -17,7 +17,7 @@ const ProfileMenu = () => {
 	const { isShow, setIsShow, ref } = useOutside(false);
 
 	const { logout } = useActions();
-
+	console.log(data?.avatarPath);
 	if (isLoading) return null; //can add own Loader
 
 	return (

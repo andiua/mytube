@@ -2,26 +2,26 @@ import {
 	Controller,
 	HttpCode,
 	Post,
+	Query,
 	UploadedFile,
 	UseInterceptors,
-	Query,
 } from '@nestjs/common';
-import { MediaService } from './media.service';
-import { Auth } from 'src/auth/auth.decorator';
 import { FileInterceptor } from '@nestjs/platform-express';
+import { Auth } from 'src/auth/auth.decorator';
+import { MediaService } from './media.service';
 
 @Controller('media')
 export class MediaController {
-	constructor(private readonly mediaService: MediaService) { }
-	
+	constructor(private readonly mediaService: MediaService) {}
+
 	@HttpCode(200)
 	@Post()
 	@Auth()
 	@UseInterceptors(FileInterceptor('media'))
-	async uploadFile(
+	async uploadMediaFile(
 		@UploadedFile() mediaFile: Express.Multer.File,
-		@Query('folder') folder?:string
+		@Query('folder') folder?: string,
 	) {
-		return this.mediaService.saveMedia(mediaFile, folder)
+		return this.mediaService.saveMedia(mediaFile, folder);
 	}
 }

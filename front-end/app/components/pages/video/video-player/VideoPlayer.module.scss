@@ -4,7 +4,8 @@
 		@apply w-full;
 	}
 	.controls {
-		@apply absolute left-5 basis-5 flex items-center justify-between bg-gray-500 bg-opacity-75 rounded-lg shadow p-2.5 px-5 transition-all duration-1000;
+		@apply absolute left-5 bottom-5 flex items-center justify-between bg-gray-500 bg-opacity-75 rounded-lg shadow p-2.5 px-5 transition-all duration-1000;
+		width: calc(100% - 2.5rem);
 		&.hide {
 			@apply bottom-0 opacity-0;
 		}

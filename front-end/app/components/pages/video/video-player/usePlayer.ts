@@ -90,10 +90,10 @@ export const usePlayer = () => {
 			}
 		};
 
-		videoRef.current?.addEventListener('keydown', handleKeyDown);
+		document.addEventListener('keydown', handleKeyDown);
 
 		return () => {
-			videoRef.current?.removeEventListener('keydown', handleKeyDown);
+			document.removeEventListener('keydown', handleKeyDown);
 		};
 	}, [toggleVideo]);
 

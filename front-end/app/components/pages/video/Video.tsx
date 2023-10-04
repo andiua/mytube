@@ -21,6 +21,7 @@ const Video: FC = () => {
 		<Layout title={video.name}>
 			<div className={styles.layout}>
 				<VideoPlayer videoPath={video.videoPath} />
+				<div></div>
 				{/* Comments here */}
 			</div>
 			<div className={cn(styles.layout, 'mt-7')}>
