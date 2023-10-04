@@ -1,10 +1,12 @@
 import { formatNumberTok } from '@/utils/format-number-to-k';
 import dayjs from 'dayjs';
+import lang from 'dayjs/locale/uk';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import { FC } from 'react';
 import styles from './VideoItem.module.scss';
 
 dayjs.extend(relativeTime);
+dayjs.locale(lang);
 
 interface IVideoStatistics {
 	views: number;

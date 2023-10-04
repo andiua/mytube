@@ -1,11 +1,13 @@
 import Layout from '@/components/layout/Layout';
 import { videoApi } from '@/store/api/video.api';
+import { IUser } from '@/types/user.interface';
 import { IVideo } from '@/types/video.interface';
 import cn from 'classnames';
 import { useRouter } from 'next/router';
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 import styles from './Video.module.scss';
 import Comments from './comments/Comments';
+import VideoDetail from './video-detail/VideoDetail';
 import VideoPlayer from './video-player/VideoPlayer';
 
 const Video: FC = () => {
@@ -17,6 +19,13 @@ const Video: FC = () => {
 			skip: !query?.id
 		}
 	);
+
+	const [updateViews] = videoApi.useUpdateViewsMutation();
+
+	useEffect(() => {
+		if (query.id) updateViews(Number(query.id));
+	}, [query.id]);
+
 	return (
 		<Layout title={video.name}>
 			<div className={styles.layout}>
@@ -24,8 +33,8 @@ const Video: FC = () => {
 				<Comments comments={video.comments || []} videoId={video.id} />
 			</div>
 			<div className={cn(styles.layout, 'mt-7')}>
-				{/* videDetail here */}
-				{/* <div></div> */}
+				<VideoDetail channel={video.user || ({} as IUser)} video={video} />
+				<div></div>
 			</div>
 		</Layout>
 	);
