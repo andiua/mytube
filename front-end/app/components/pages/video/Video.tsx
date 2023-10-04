@@ -5,11 +5,11 @@ import cn from 'classnames';
 import { useRouter } from 'next/router';
 import { FC } from 'react';
 import styles from './Video.module.scss';
+import Comments from './comments/Comments';
 import VideoPlayer from './video-player/VideoPlayer';
 
 const Video: FC = () => {
 	const { query } = useRouter();
-	console.log(query);
 
 	const { data: video = {} as IVideo } = videoApi.useGetVideoByIdQuery(
 		Number(query.id),
@@ -21,8 +21,7 @@ const Video: FC = () => {
 		<Layout title={video.name}>
 			<div className={styles.layout}>
 				<VideoPlayer videoPath={video.videoPath} />
-				<div></div>
-				{/* Comments here */}
+				<Comments comments={video.comments || []} videoId={video.id} />
 			</div>
 			<div className={cn(styles.layout, 'mt-7')}>
 				{/* videDetail here */}

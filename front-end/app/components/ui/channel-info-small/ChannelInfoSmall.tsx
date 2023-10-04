@@ -14,8 +14,8 @@ const ChannelInfoSmall: FC<{ channel: IUser; message?: string }> = ({
 
 			<div>
 				<div className={styles.name}>{channel.name}</div>
-				<div className={styles.name}>
-					{message || formatNumberTok(channel.subscriberCount)} підписників
+				<div className={styles.subscribers_count}>
+					{message || formatNumberTok(channel.subscriberCount) + ' підписників'}
 				</div>
 			</div>
 		</div>
