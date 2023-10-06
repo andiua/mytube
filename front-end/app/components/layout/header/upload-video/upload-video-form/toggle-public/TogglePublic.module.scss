@@ -1,0 +1,9 @@
+.wrapper {
+	@apply mt-5;
+	.switch {
+		@apply rounded-full w-10 h-4 mr-2;
+	}
+	.point {
+		@apply block rounded-full h-3 w-3 bg-white;
+	}
+}

@@ -6,13 +6,16 @@ import { PersistGate } from 'redux-persist/integration/react';
 import ReduxToastrLib from 'react-redux-toastr';
 import NextProgressBar from 'nextjs-progressbar';
 import AuthProvider from '@/providers/AuthProvider';
+import { QueryClient, QueryClientProvider } from 'react-query';
 import { TypeComponentAuthFields } from '@/providers/private-route.interface';
 
 type TypeAppProps = AppProps & TypeComponentAuthFields;
 
+const queryClient = new QueryClient();
+
 export default function App({ Component, pageProps }: TypeAppProps) {
 	return (
-		<>
+		<QueryClientProvider client={queryClient}>
 			<NextProgressBar
 				color='#ff7652'
 				startPosition={0.3}
@@ -35,6 +38,6 @@ export default function App({ Component, pageProps }: TypeAppProps) {
 					</AuthProvider>
 				</PersistGate>
 			</Provider>
-		</>
+		</QueryClientProvider>
 	);
 }

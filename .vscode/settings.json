@@ -1,9 +1,5 @@
 {
-	"css.customData": [
-		".vscode/tailwind.json"
-	],
-	"cSpell.words": [
-		"reduxjs"
-	],
-	"cSpell.language": "en,uk"
+  "css.customData": [".vscode/tailwind.json"],
+  "cSpell.words": ["reduxjs", "прев'ю"],
+  "cSpell.language": "en,uk"
 }

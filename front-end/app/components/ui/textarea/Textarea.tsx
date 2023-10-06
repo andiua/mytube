@@ -1,5 +1,5 @@
 import { FC, forwardRef } from 'react';
-import styles from './Field.module.scss';
+import styles from './Textarea.module.scss';
 import { ITextarea } from './textarea.interface';
 
 const Textarea = forwardRef<HTMLTextAreaElement, ITextarea>(

@@ -3,6 +3,7 @@ import { FC, useState } from 'react';
 import styles from './UploadVideo.module.scss';
 import stylesIcon from '../icons-right/IconsRight.module.scss';
 import { HiUpload } from 'react-icons/hi';
+import UploadModal from './UploadModal';
 
 const UploadVideo: FC = () => {
 	const [isOpen, setIsOpen] = useState(false);
@@ -26,7 +27,7 @@ const UploadVideo: FC = () => {
 			>
 				<HiUpload />
 			</button>
-			{/* <UploadModal isOpen={isOpen} setIsOpen={setIsOpen} videoId={videoId} /> */}
+			<UploadModal isOpen={isOpen} setIsOpen={setIsOpen} videoId={videoId} />
 		</>
 	);
 };
